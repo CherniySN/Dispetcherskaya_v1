@@ -1,0 +1,51 @@
+CREATE TABLE Autosalon(
+IDStore	SERIAL PRIMARY KEY	Not null,
+NameStore	Varchar(50) 	Not null,
+INNStore	Int 	Not null,
+TelStore	Varchar(50) 	Not null
+);
+
+CREATE TABLE Auto(
+IDAuto	SERIAL PRIMARY KEY	Not null,
+Model	Varchar(50) 	Not null,
+YearOfAuto	Varchar(50) 	Not null,
+PowerOfAuto	Int 	Not null,
+Price	Int 	Not null,
+ValueOfAuto	Int 	Not null,
+IDStor int REFERENCES Autosalon(IDStore)
+);
+
+INSERT INTO Autosalon VALUES (1,'Ставр',321456,'8(961)390-31-76');
+INSERT INTO Autosalon VALUES (2,'Вольво',325412,'8(927)435-45-38');
+INSERT INTO Autosalon VALUES (4,'БМВ',346666,'8(906)345-31-45');
+INSERT INTO Autosalon VALUES (5,'САТ',332211,'8(905)390-56-38');
+INSERT INTO Autosalon VALUES (6,'JUB',985676,'8(234)456-31-24');
+INSERT INTO Autosalon VALUES (7,'Луидор',436552,'8(961)390-23-38');
+INSERT INTO Autosalon VALUES (8,'Митсубиши',321456,'8(879)324-31-45');
+INSERT INTO Autosalon VALUES (9,'Тойота',235423,'8(456)390-67-38');
+INSERT INTO Autosalon VALUES (10,'Хендай',784567,'8(234)677-31-32');
+INSERT INTO Autosalon VALUES (11,'Хонда',435623,'8(456)390-43-38');
+INSERT INTO Autosalon VALUES (12,'Сузуки',454376,'8(232)678-31-45');
+INSERT INTO Autosalon VALUES (13,'Биртон',893434,'8(866)390-67-38');
+INSERT INTO Autosalon VALUES (14,'Руберман',676545,'8(455)345-31-56');
+INSERT INTO Autosalon VALUES (15,'Кан-Авто',424354,'8(961)390-23-38');
+
+INSERT INTO Auto VALUES (1,'Москва','2021',150,1200000,12,1);
+INSERT INTO Auto VALUES (2,'Грейдер','2021',150,500000,33,2);
+INSERT INTO Auto VALUES (3,'ТР-23','2021',150,67443444,12,1);
+INSERT INTO Auto VALUES (4,'Кировец','2021',10,9000000,12,5);
+INSERT INTO Auto VALUES (5,'АС-Бетон','2021',340,240000,23,4);
+INSERT INTO Auto VALUES (6,'Автопогрузчик','2018',650,4500000,34,6);
+INSERT INTO Auto VALUES (7,'Гредер А67','2021',340,6000000,4,7);
+INSERT INTO Auto VALUES (8,'Трактор Н6','2019',670,1500000,4,9);
+INSERT INTO Auto VALUES (9,'Камаз','2021',120,1800000,0,8);
+INSERT INTO Auto VALUES (10,'Камаз','2021',120,2000000,45,10);
+INSERT INTO Auto VALUES (11,'Бобик','2021',650,2300000,9,11);
+INSERT INTO Auto VALUES (12,'Фронтальный трактор','2019',40,14500000,1,15);
+INSERT INTO Auto VALUES (13,'Автоочиститель','2021',340,1250000,23,12);
+INSERT INTO Auto VALUES (14,'Тарктор','2021',320,1300000,2,13);
+INSERT INTO Auto VALUES (15,'Трактор','2020',320,1450000,1,13);
+
+select idauto from Auto;
+select * from Auto;
+UPDATE Auto SET valueofauto=valueofauto-1 WHERE idauto = 1;
